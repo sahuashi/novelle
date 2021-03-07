@@ -1,0 +1,33 @@
+.header{
+    text-align: center;
+    padding:2em;
+}
+
+.display-4{
+    font-size: 2.5rem;
+}
+
+.btn-blue{
+    background-color: cornflowerblue;
+}
+
+.btn{
+    border-radius: 8px;
+}
+
+.heart{
+    color:#e25555;
+}
+
+.footer{
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  padding: 3px;
+  font-size: 12px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+

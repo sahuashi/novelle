@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="header">
+    <h1 class="display-4">{{current_user.username}}'s Reading List</h1>
+</div>
+<div class="container">
+    <div class="row mx-auto no-gutters justify-content-center">
+        {% for book in user.list %}
+        <div class="card mb-3 ms-3 h-auto text-center" style="width: 18rem;">
+            <img src="{{book.thumbnail}}" class="card-img-top" alt="Book thumbnail">
+            <div class="card-body">
+                <h5 class="card-title">{{ book.title }}</h5>
+                <p class="card-title text-muted">{{ book.subtitle }}</p>
+                <a href="{{book.googlebooks}}" class="btn btn-blue text-white">View on Google Books</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
