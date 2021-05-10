@@ -4,36 +4,29 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+    <link href="http://fonts.googleapis.com/css?family=Caveat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600,700,800|Work+Sans:400,700" rel="stylesheet">    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
     <title>Novelle</title>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <div class="container-fluid">
-            <a class="navbar-brand" style="color: cornflowerblue;" href="/">Novelle</a>
+            <a class="navbar-brand brand d-flex w-50 me-auto" href="/">novelle</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="/search">Search</a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            My Account
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/mylist">My List</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            {% if current_user.is_authenticated %}
-                                <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                            {% else %}
-                                <li><a class="dropdown-item" href="/login">Login</a></li>
-                            {% endif %}
-                        </ul>
-                    </li>
-                </div>
+                <ul class="navbar-nav w-100 justify-content-center">
+                    <li><a class="nav-link item" href="/search">Search 🔎</a></li>
+                    <li><a class="nav-link item" href="/mylist">Reading List 📚</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto w-100 justify-content-end">
+                    {% if current_user.is_authenticated %}
+                    <li><a class="nav-link item" href="/logout">Logout</a></li>
+                    {% else %}
+                    <li><a class="nav-link item" href="/login">Login</a></li>
+                    {% endif %}
+                </ul>
             </div>
         </div>
     </nav>
@@ -52,6 +45,6 @@
         crossorigin="anonymous"></script>
 </body>
 <footer class="footer">
-    Made with <span class="heart">❤</span> by sahuashi
+    made with <span class="heart">❤</span> by sahuashi
 </footer>
 </html>

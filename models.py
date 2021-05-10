@@ -4,7 +4,8 @@ from main import db
 List = db.Table(
     'List',
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
-    db.Column('book_id', db.String(50), db.ForeignKey('book.id'), primary_key=True))
+    db.Column('book_id', db.String(50), db.ForeignKey('book.id'), primary_key=True)
+)
 
 
 class Book(db.Model):
@@ -14,9 +15,15 @@ class Book(db.Model):
     thumbnail = db.Column(db.String(400))
     googlebooks = db.Column(db.String(400))
 
+    def __repr__(self):
+        return f"Book('{self.title}')"
+
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
     password = db.Column(db.String(20), nullable=False)
     list = db.relationship('Book', secondary=List)
+
+    def __repr__(self):
+        return f"User('{self.username}')"

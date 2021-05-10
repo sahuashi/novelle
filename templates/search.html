@@ -1,18 +1,16 @@
 {% extends 'base.html'%}
 {% block content %}
-<div class="header">
-    <h1 class="display-4">Search</h1>
-</div>
-<div class="container">
-    <form action="#" method="post">
+<div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center search">
+    <h1 class="display-4 text-center">Search</h1>
+    <form class="searchform" action="#" method="post">
         <div class="input-group mb-3">
             <input type="text" name="query" class="form-control"
                    placeholder="Enter keyword (e.g., narrative, Vienna, yoga)"
                    aria-label="Enter keyword (e.g., narrative, Vienna, yoga)" aria-describedby="button-addon2"/>
             <div class="input-group-append">
-                <button class="btn btn-blue text-white" type="submit" name="submit">Submit</button>
+                <button class="btn btn-blue text-white" type="submit" name="submit">Find</button>
             </div>
         </div>
     </form>
-</div><br>
+</div>
 {% endblock %}

@@ -1,23 +1,23 @@
 {% extends 'base.html'%}
 {% block content %}
 <div class="header">
-    <h1 class="display-4">Search Results for <span class="text-muted">{{query}}</span></h1>
+    <h1 class="display-4 mt-3 mb-4">Search Results for <span class="text-muted">{{query}}</span></h1>
 </div>
 
 <div class="container">
     {% for book in books %}
-    <div class="card mb-3 border-secondary">
-        <div class="row mx-auto no-gutters">
-            <div class="col-md-3 my-auto">
+    <div class="card mb-5 border-yellow">
+        <div class="row no-gutters">
+            <div class="col-md-3 my-auto mx-auto">
                 <img src="{{ book.thumbnail }}" class="card-img" alt="Book thumbnail">
             </div>
             <div class="col-md-9">
                 <div class="card-body">
-                    <h5 class="card-title">{{ book.title }}</h5>
-                    <h6 class="card-title text-muted">{{book.subtitle}}</h6>
+                    <h5 class="card-title heading">{{ book.title }}</h5>
+                    <h6 class="card-title subheading text-muted">{{book.subtitle}}</h6>
                     <p class="card-text">{{ book.desc }}</p>
                 </div>
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush info">
                     <li class="list-group-item">Author: {{ book.author }}</li>
                     <li class="list-group-item">Publisher: {{ book.publisher }}</li>
                     <li class="list-group-item">Date published: {{book.date}}</li>
@@ -27,14 +27,14 @@
                 <div style="width: auto;" class="card-body">
                     <div style="float: left; width: 150px;">
                         <form action="{{ url_for('route.save') }}" method="POST">
-                            <button class="card-link btn btn-blue text-white" type="submit" name="bookid"
+                            <button class="card-link btn btn-yellow text-white curved" type="submit" name="bookid"
                                     value="{{book.id}}">
                                 Save to My List
                             </button>
                         </form>
                     </div>
-                    <div style="float: left; width: 190px">
-                        <a href="{{book.infoLink}}" class="card-link btn btn-blue text-white" role="button">
+                    <div style="float: left; width: 210px">
+                        <a href="{{book.infoLink}}" class="card-link btn btn-blue text-white curved" role="button">
                             View on Google Books</a>
                     </div>
                     <br><br>
