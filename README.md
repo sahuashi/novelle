@@ -1,11 +1,11 @@
-![logo](logo.png)
+![logo](static/logo.png)
 # Novelle: Book Finder
 A web application that allows user to search for books and save them to a reading list. 
 
 Built with Python, Flask, Bootstrap, SQLite and Google Books API.
 
 ## Demo
-![demo gif](demo.gif)
+![demo gif](static/demo.gif)
 
 This application is currently deployed on Heroku at https://novelle.herokuapp.com.
 
