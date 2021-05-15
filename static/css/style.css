@@ -44,10 +44,13 @@ body {
   bottom: 0;
   width: 100%;
   color: #FCA311;
+  font-family: "Work Sans";
+  font-weight: 400;
 }
 
 .brand {
     font-family: "Caveat";
+    font-weight: 400;
     color: #FCA311!important;
     font-size: 175%;
     margin-top:-0.3%
@@ -72,10 +75,12 @@ body {
 
 .info {
     font-family: "Work Sans";
+    font-weight: 400;
 }
 
 .card-text {
     font-family: "Work Sans";
+    font-weight: 400;
 }
 
 .border-yellow {
@@ -115,4 +120,11 @@ body {
 
 .loginform {
     width: 60%
+}
+
+#pic {
+    background-image: url('../BookLover_Isometric.svg');
+    background-repeat:no-repeat;
+    background-position: 3% 55%;
+    background-size: 50%;
 }
