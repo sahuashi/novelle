@@ -1,15 +1,15 @@
+import os
+import requests
 from flask import Blueprint, render_template, flash, request, redirect, url_for, current_app
 from flask_login import login_required, logout_user, login_user, current_user
 from sqlalchemy import exc
 from models import User, Book
 from main import db
 from forms import Form
-import os, requests
 
 router = Blueprint('route', __name__)
 
-
-# no home page atm, redirects to search page
+# no home page at the moment, redirect from home page to search page
 @router.route("/")
 def index():
     return redirect(url_for('route.search'))
@@ -36,89 +36,11 @@ def retrieve(query):
     resp = requests.get(search_url)
     # save relevant book info from api response
     responses = resp.json()['items']
-    books = parsebooks(responses)
+    books = parse_books(responses)
     return render_template('results.html', books=books, query=query)
 
 
-# allow user to login to view and edit list
-@router.route("/login", methods=['GET', 'POST'])
-def login():
-    form = Form()
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
-        if user:
-            if user.password == form.password.data:
-                login_user(user)
-                flash(f'Welcome back, {current_user.username}!')
-                return redirect(url_for('route.list'))
-        # return to login page to try again
-        flash('Invalid username/password. Please try again.')
-        return redirect(url_for('route.login'))
-    return render_template('login.html', form=form)
-
-
-# allow user to create account
-@router.route("/register", methods=['GET', 'POST'])
-def register():
-    form = Form()
-    if form.validate_on_submit():
-        user = User(username=form.username.data, password=form.password.data)
-        try:
-            db.session.add(user)
-            db.session.flush()
-        except exc.SQLAlchemyError:
-            db.session.rollback()
-            flash('Username already taken! Please try again.')
-            return redirect(url_for('route.register'))
-        else:
-            db.session.commit()
-            flash('Account created! Please login to continue.')
-            return redirect(url_for('route.login'))
-
-    return render_template('register.html', form=form)
-
-
-# protected route: allow user to logout
-@router.route("/logout")
-@login_required
-def logout():
-    flash(f'You were successfully logged out, {current_user.username}!')
-    logout_user()
-    return redirect(url_for('route.index'))
-
-
-# display user's reading list
-@router.route("/mylist")
-def list():
-    if current_user.is_authenticated:
-        return render_template('list.html', user=current_user)
-    else:
-        flash('You must login to see your reading list.')
-        return redirect(url_for('route.login'))
-
-
-# add book to user's reading list
-@router.route("/save", methods=['POST', 'GET'])
-def save():
-    if current_user.is_authenticated:
-        if request.method == "POST":
-            bookid = request.form['bookid']
-            book = Book.query.filter_by(id=bookid).first()
-            user = current_user
-            user.list.append(book)
-            db.session.commit()
-            return redirect(url_for('route.list'))
-    else:
-        flash('You must login to save to your reading list.')
-        return redirect(url_for('route.login'))
-
-
-@router.route('/favicon.ico')
-def favicon():
-    return current_app.send_static_file('favicon.ico')
-
-
-def parsebooks(res):
+def parse_books(res):
     # list to store parsed book information
     books = []
     # retrieve relevant info from json
@@ -161,3 +83,84 @@ def parsebooks(res):
         else:
             db.session.commit()
     return books
+
+
+# allow user to login to view and add to list
+@router.route("/login", methods=['GET', 'POST'])
+def login():
+    form = Form()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user:
+            if user.password == form.password.data:
+                # valid login, redirect to user's reading list
+                login_user(user)
+                flash(f'Welcome back, {current_user.username}!')
+                return redirect(url_for('route.list'))
+        # invalid login, return to login page to try again
+        flash('Invalid username/password. Please try again.')
+        return redirect(url_for('route.login'))
+    return render_template('login.html', form=form)
+
+
+# allow user to create account
+@router.route("/register", methods=['GET', 'POST'])
+def register():
+    form = Form()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, password=form.password.data)
+        # add new user to database
+        try:
+            db.session.add(user)
+            db.session.flush()
+        # if user already exists, abort
+        except exc.SQLAlchemyError:
+            db.session.rollback()
+            flash('Username already taken! Please try again.')
+            return redirect(url_for('route.register'))
+        # save changes to database and have user login
+        else:
+            db.session.commit()
+            flash('Account created! Please login to continue.')
+            return redirect(url_for('route.login'))
+    return render_template('register.html', form=form)
+
+
+# protected route: allow user to logout
+@router.route("/logout")
+@login_required
+def logout():
+    flash(f'You were successfully logged out, {current_user.username}!')
+    logout_user()
+    return redirect(url_for('route.index'))
+
+
+# display user's reading list
+@router.route("/mylist")
+def list():
+    if current_user.is_authenticated:
+        return render_template('list.html', user=current_user)
+    else:
+        flash('You must login to see your reading list.')
+        return redirect(url_for('route.login'))
+
+
+# add book to user's reading list
+@router.route("/save", methods=['POST', 'GET'])
+def save():
+    if current_user.is_authenticated:
+        if request.method == "POST":
+            bookid = request.form['bookid']
+            book = Book.query.filter_by(id=bookid).first()
+            user = current_user
+            user.list.append(book)
+            db.session.commit()
+            return redirect(url_for('route.list'))
+    else:
+        flash('You must login to save to your reading list.')
+        return redirect(url_for('route.login'))
+
+
+@router.route('/favicon.ico')
+def favicon():
+    return current_app.send_static_file('favicon.ico')

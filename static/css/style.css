@@ -1,39 +1,39 @@
-.header{
-    text-align: center;
+.header {
+  text-align: center;
 }
 
 body {
-    color: #1E325C;
+  color: #1e325c;
 }
 
 .display-4 {
-    font-size: 2.5rem;
-    font-family: "Montserrat";
-    font-weight: 300;
-    color: #FCA311;
+  font-size: 2.5rem;
+  font-family: "Montserrat";
+  font-weight: 300;
+  color: #fca311;
 }
 
-.btn-blue{
-    background-color: #1E325C;
-    font-family: "Montserrat";
-    font-weight: 300
+.btn-blue {
+  background-color: #1e325c;
+  font-family: "Montserrat";
+  font-weight: 300;
 }
 
-.btn-yellow{
-    background-color: #FCA311;
-    font-family: "Montserrat";
-    font-weight: 300
+.btn-yellow {
+  background-color: #fca311;
+  font-family: "Montserrat";
+  font-weight: 300;
 }
 
-.curved{
-    border-radius: 8px;
+.curved {
+  border-radius: 8px;
 }
 
-.heart{
-    color:#e25555;
+.heart {
+  color: #e25555;
 }
 
-.footer{
+.footer {
   text-align: center;
   width: 100%;
   margin: auto;
@@ -43,88 +43,91 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  color: #FCA311;
+  color: #fca311;
   font-family: "Work Sans";
   font-weight: 400;
 }
 
 .brand {
-    font-family: "Caveat";
-    font-weight: 400;
-    color: #FCA311!important;
-    font-size: 175%;
-    margin-top:-0.3%
-
+  font-family: "Caveat";
+  font-weight: 400;
+  color: #fca311 !important;
+  font-size: 175%;
+  margin-top: -0.3%;
 }
 
 .item {
-    font-family: "Montserrat";
-    font-weight: 300;
-    color: #1E325C!important;
+  font-family: "Montserrat";
+  font-weight: 300;
+  color: #1e325c !important;
 }
 
 .heading {
-    font-family: "Montserrat";
-    font-weight: 700
+  font-family: "Montserrat";
+  font-weight: 700;
 }
 
 .subheading {
-    font-family: "Montserrat";
-    font-weight: 500;
+  font-family: "Montserrat";
+  font-weight: 500;
 }
 
 .info {
-    font-family: "Work Sans";
-    font-weight: 400;
+  font-family: "Work Sans";
+  font-weight: 400;
 }
 
 .card-text {
-    font-family: "Work Sans";
-    font-weight: 400;
+  font-family: "Work Sans";
+  font-weight: 400;
 }
 
 .border-yellow {
-    border-color: #ffffff;
+  border-color: #ffffff;
 }
 
-::-webkit-input-placeholder { /* chrome, safari */
-   font-family: "Work Sans";
-   font-weight: 400;
+::-webkit-input-placeholder {
+  /* chrome, safari */
+  font-family: "Work Sans";
+  font-weight: 400;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-   font-family: "Work Sans";
-   font-weight: 400;
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: "Work Sans";
+  font-weight: 400;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-   font-family: "Work Sans";
-   font-weight: 400;
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: "Work Sans";
+  font-weight: 400;
 }
 
-:-ms-input-placeholder {  /* Internet Explorer */
-   font-family: "Work Sans";
-   font-weight: 400;
+:-ms-input-placeholder {
+  /* Internet Explorer */
+  font-family: "Work Sans";
+  font-weight: 400;
 }
 
-.search{
-    margin-top: -7%;
-    /*background-image: url("../yellowblue.jpeg");
+.search {
+  margin-top: -7%;
+  /*background-image: url("../yellowblue.jpeg");
     background-size: 800px 400px;
     background-repeat: no-repeat;*/
 }
 
 .searchform {
-    width: 70%
+  width: 70%;
 }
 
 .loginform {
-    width: 60%
+  width: 60%;
 }
 
 #pic {
-    background-image: url('../BookLover_Isometric.svg');
-    background-repeat:no-repeat;
-    background-position: 3% 55%;
-    background-size: 50%;
+  background-image: url("../BookLover_Isometric.svg");
+  background-repeat: no-repeat;
+  background-position: 3% 55%;
+  background-size: 50%;
 }
