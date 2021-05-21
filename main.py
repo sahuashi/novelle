@@ -1,9 +1,8 @@
 import os
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from views.routes import router
-from models import User
+from models import db, User
 
 # initialize flask app
 app = Flask(__name__)
@@ -12,8 +11,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = os.environ.get('SECRET_KEY')
 app.register_blueprint(router)
 
-# setup database
-db = SQLAlchemy(app)
+# initialize database
+db.init_app(app)
+with app.app_context():
+    db.create_all()
 
 # setup login manager
 login_manager = LoginManager()

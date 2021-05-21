@@ -1,12 +1,13 @@
 from flask_login import UserMixin
-from main import db
+from flask_sqlalchemy import SQLAlchemy
+
+# setup database
+db = SQLAlchemy()
 
 List = db.Table(
     'List',
-    db.Column('user_id', db.Integer, db.ForeignKey(
-        'user.id'), primary_key=True),
-    db.Column('book_id', db.String(50), db.ForeignKey(
-        'book.id'), primary_key=True)
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
+    db.Column('book_id', db.String(50), db.ForeignKey('book.id'), primary_key=True)
 )
 
 

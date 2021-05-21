@@ -3,11 +3,11 @@ import requests
 from flask import Blueprint, render_template, flash, request, redirect, url_for, current_app
 from flask_login import login_required, logout_user, login_user, current_user
 from sqlalchemy import exc
-from models import User, Book
-from main import db
+from models import db, User, Book
 from forms import Form
 
 router = Blueprint('route', __name__)
+
 
 # no home page at the moment, redirect from home page to search page
 @router.route("/")
