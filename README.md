@@ -1,6 +1,5 @@
 # Novelle
 A web application that allows users to browse for books and save them to a reading list for later. 
-
 ![landing page](static/landing.png)
 Built with Python, Flask, Bootstrap, SQLite and Google Books API.
 
