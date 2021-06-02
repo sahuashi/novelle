@@ -3,7 +3,7 @@ A web application that allows users to browse for books and save them to a readi
 ![landing page](static/landing.png)
 ### Built with:
 * [Flask](https://palletsprojects.com/p/flask/) - Backend
-* [Jinja2]() - Template engine
+* [Jinja2](https://jinja.palletsprojects.com/en/3.0.x/) - Template engine
 * [Bootstrap](https://getbootstrap.com) - UI framework
 * [SQLite](https://www.sqlite.org/index.html) - Database
 * [Google Books API](https://developers.google.com/books) - Search API
