@@ -1,5 +1,5 @@
 # Novelle: Book Finder
-A web application that allows users to browse for books and save them to a reading list for later. 
+A Flask web application that allows users to browse for books and save them to a reading list for later. 
 ![landing page](static/landing.png)
 ### Built with:
 * [Flask](https://palletsprojects.com/p/flask/) - Backend
