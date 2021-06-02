@@ -1,7 +1,12 @@
-# Novelle
+# Novelle: Book Finder
 A web application that allows users to browse for books and save them to a reading list for later. 
 ![landing page](static/landing.png)
-Built with Python, Flask, Bootstrap, SQLite and Google Books API.
+### Built with:
+* [Python](https://www.python.org)
+* [Flask](https://palletsprojects.com/p/flask/)
+* [Bootstrap](https://getbootstrap.com)
+* [SQLite](https://www.sqlite.org/index.html)
+* [Google Books API](https://developers.google.com/books)
 
 ![code snippet](static/code.png)
 
@@ -16,4 +21,4 @@ In order to save books to a reading list, you must create an account. For testin
 Released under the MIT License. See `LICENSE` for more information.
 
 ## Acknowledgments
-* [Google Books API](https://developers.google.com/books)
+* [Book Illustration](https://www.manypixels.co/gallery)
