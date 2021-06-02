@@ -2,11 +2,11 @@
 A web application that allows users to browse for books and save them to a reading list for later. 
 ![landing page](static/landing.png)
 ### Built with:
-* [Python](https://www.python.org)
-* [Flask](https://palletsprojects.com/p/flask/)
-* [Bootstrap](https://getbootstrap.com)
-* [SQLite](https://www.sqlite.org/index.html)
-* [Google Books API](https://developers.google.com/books)
+* [Flask](https://palletsprojects.com/p/flask/) - Backend
+* [Jinja2]() - Template engine
+* [Bootstrap](https://getbootstrap.com) - UI framework
+* [SQLite](https://www.sqlite.org/index.html) - Database
+* [Google Books API](https://developers.google.com/books) - Search API
 
 ![code snippet](static/code.png)
 
