@@ -1,6 +1,6 @@
 # Novelle: Book Finder
 A Flask web application that allows users to browse for books and save them to a reading list for later. 
-![landing page](static/landing.png)
+![landing page](novelle/static/landing.png)
 ### Built with:
 * [Flask](https://palletsprojects.com/p/flask/) - Backend
 * [Jinja2](https://jinja.palletsprojects.com/en/3.0.x/) - Template engine
@@ -8,10 +8,10 @@ A Flask web application that allows users to browse for books and save them to a
 * [SQLite](https://www.sqlite.org/index.html) - Database
 * [Google Books API](https://developers.google.com/books) - Search API
 
-![code snippet](static/code.png)
+![code snippet](novelle/static/code.png)
 
 ## Demo
-![demo gif](static/demo.gif)
+![demo gif](novelle/static/demo.gif)
 
 This application is currently deployed on Heroku at https://novelle.herokuapp.com.
 
