@@ -3,8 +3,8 @@ import requests
 from flask import Blueprint, render_template, flash, request, redirect, url_for, current_app
 from flask_login import login_required, logout_user, login_user, current_user
 from sqlalchemy import exc
-from models import db, User, Book
-from forms import Form
+from novelle.models import db, User, Book
+from novelle.forms import Form
 
 router = Blueprint('route', __name__)
 

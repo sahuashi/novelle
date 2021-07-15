@@ -1,8 +1,8 @@
 import os
 from flask import Flask
 from flask_login import LoginManager
-from views.routes import router
-from models import db, User
+from novelle.views.routes import router
+from novelle.models import db, User
 
 # initialize flask app
 app = Flask(__name__)
