@@ -11,9 +11,9 @@
             <div class="card-body">
                 <h5 class="card-title heading">{{ book.title }}</h5>
                 <p class="card-title subheading text-muted">{{ book.subtitle }}</p>
-                <a href="{{book.googlebooks}}" class="btn btn-blue text-white">View on Google Books</a>
+                <a href="{{book.googlebooks}}" class="btn btn-blue text-white curved">View on Google Books</a>
                 <form action="{{ url_for('route.delete') }}" method="POST">
-                    <button style="width: auto;" class="card-link btn btn-yellow text-white curved mt-2" type="submit" name="bookid"
+                    <button class="card-link btn btn-yellow text-white curved mt-2" type="submit" name="bookid"
                             value="{{book.id}}">
                         Remove from My List
                     </button>
