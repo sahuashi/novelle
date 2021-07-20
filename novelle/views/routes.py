@@ -150,8 +150,8 @@ def list():
 def save():
     if current_user.is_authenticated:
         if request.method == "POST":
-            bookid = request.form['bookid']
-            book = Book.query.filter_by(id=bookid).first()
+            book_id = request.form['bookid']
+            book = Book.query.filter_by(id=book_id).first()
             user = current_user
             user.list.append(book)
             db.session.commit()
@@ -159,6 +159,16 @@ def save():
     else:
         flash('You must login to save to your reading list.')
         return redirect(url_for('route.login'))
+
+
+@router.route("/delete", methods=['POST'])
+def delete():
+    book_id = request.form['bookid']
+    book = Book.query.filter_by(id=book_id).first()
+    user = current_user
+    user.list.remove(book)
+    db.session.commit()
+    return redirect(url_for('route.list'))
 
 
 @router.route('/favicon.ico')
