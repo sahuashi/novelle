@@ -11,14 +11,15 @@ A Flask web application that allows users to browse for books and save them to a
 ![code snippet](novelle/static/code.png)
 
 ## Demo
-![demo gif](novelle/static/demo.gif)
-
 This application is currently deployed on Heroku at https://novelle.herokuapp.com.
+
+![demo gif](novelle/static/demo.gif)
 
 In order to save books to a reading list, you must create an account. For testing purposes, you may use the following sample credentials: username: `guest` & password: `pass123`.
 
 ## License
 Released under the MIT License. See `LICENSE` for more information.
 
-## Acknowledgments
+## Acknowledgements
 * [Book Illustration](https://www.manypixels.co/gallery)
+* [Color Scheme](https://coolors.co)
