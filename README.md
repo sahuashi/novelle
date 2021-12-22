@@ -15,8 +15,6 @@ This application is currently deployed on Heroku at https://novelle.herokuapp.co
 
 ![demo gif](novelle/static/demo.gif)
 
-In order to save books to a reading list, you must create an account. For testing purposes, you may use the following sample credentials: username: `guest` & password: `pass123`.
-
 ## License
 Released under the MIT License. See `LICENSE` for more information.
 
